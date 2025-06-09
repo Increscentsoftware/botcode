@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/856909f7-16b9-4bef-84a9-44fb6f4161af/resourceGroups/AIassistant/providers/Microsoft.Web/sites/Increscentbot",
+    "appService.deploySubpath": "backend"
+}
