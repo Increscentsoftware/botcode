@@ -14,18 +14,25 @@ export default function Home() {
       setResponse("Please enter a prompt.");
       return;
     }
+
     setLoading(true);
     setResponse("");
+
     try {
-      const res = await axios.post("http://localhost:8000/api/run", {
+      const baseURL =
+        process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+
+      const res = await axios.post(`${baseURL}/api/run`, {
         prompt,
         model,
       });
+
       setResponse(res.data.output);
     } catch (error) {
       console.error("Error:", error);
       setResponse("Something went wrong. Please try again.");
     }
+
     setLoading(false);
   };
 
